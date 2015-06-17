@@ -1,0 +1,11 @@
+{
+  "preset": "node-style-guide",
+  "disallowQuotedKeysInObjects": null,
+  "disallowSpacesInsideParentheses": null,
+  "requireSpacesInsideParentheses": {
+    "all": true,
+    "except": [ "{", "}" ]
+  },
+  "maximumLineLength": 120,
+  "requireCamelCaseOrUpperCaseIdentifiers": "ignoreProperties"
+}

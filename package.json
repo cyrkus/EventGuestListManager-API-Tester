@@ -1,0 +1,31 @@
+{
+  "name": "7apps-io-events-api-tests",
+  "version": "1.0.0",
+  "description": "REST API for handling (7apps.io / Limelight) event data",
+  "main": "",
+  "scripts": {
+    "test": "./node_modules/jasmine-node/bin/jasmine-node spec/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sevenapps/EventGuestListManager-API-Tester.git"
+  },
+  "keywords": [
+    "test-suite"
+  ],
+  "author": "Ryan Anderson <ryan@7apps.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sevenapps/EventGuestListManager-API-Tester/issues"
+  },
+  "homepage": "https://github.com/sevenapps/EventGuestListManager-API-Tester",
+  "devDependencies": {
+    "btoa": "^1.1.2",
+    "frisby": "git://github.com/andersryanc/frisby#feature/add-path-to-json-types-error-msg",
+    "jasmine": "^2.3.1",
+    "jasmine-node": "^1.14.5",
+    "request": "^2.57.0",
+    "underscore": "^1.8.3"
+  },
+  "private": true
+}
