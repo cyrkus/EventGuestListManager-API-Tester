@@ -56,7 +56,7 @@ exports.event = {
   end_date: helper.matchDate,
   created_at: helper.matchDate,
   updated_at: helper.matchDate,
-  attendees: Array,
+  attendees: helper.arrayOrUndefined,
   languages: Array,
   features: Array,
   modes: Array,

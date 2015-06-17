@@ -31,17 +31,12 @@ frisby.create( 'attendees :: Missing Event ID' )
   })
 .toss();
 
-// Attendees are listed in their own object,
-// so no need for them in the actual event
-var eventNoAttendees = object.event;
-eventNoAttendees.attendees = undefined;
-
 frisby.create( 'attendees' )
   .get( config.endpoint + '/attendees?event_id=2' )
   .expectStatus( 200 )
   .expectJSONTypes( 'attendees.?', object.attendee )
   .expectJSONTypes( 'people.?', object.person )
-  .expectJSONTypes( 'event', eventNoAttendees )
+  .expectJSONTypes( 'event', object.event )
   .expectJSONTypes( 'event.settings', object.eventSettings )
   .expectJSONTypes( 'event.languages.?', object.language )
   .expectJSONTypes( 'event.features.?', object.feature )

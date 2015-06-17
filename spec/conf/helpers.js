@@ -64,3 +64,7 @@ exports.objOrNull = function( val ) {
 exports.objOrUndefined = function( val ) {
   expect( val ).toBeTypeOrUndefined( Object );
 };
+
+exports.arrayOrUndefined = function( val ) {
+  expect( val ).toBeTypeOrUndefined( Array );
+};
