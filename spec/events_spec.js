@@ -13,13 +13,13 @@ frisby.globalSetup({
   },
 });
 
-frisby.create( 'events :: Invalid Login' )
+frisby.create( '/events :: Invalid Login' )
   .get( config.endpoint + '/events' )
   .removeHeader( 'Authorization' )
   .expectStatus( 401 )
 .toss();
 
-frisby.create( 'events' )
+frisby.create( '/events' )
   .get( config.endpoint + '/events' )
   .expectStatus( 200 )
   .expectJSONTypes( 'events.?', object.event )

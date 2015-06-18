@@ -13,25 +13,25 @@ frisby.globalSetup({
   },
 });
 
-frisby.create( 'verify :: Invalid Login' )
+frisby.create( '/verify :: Invalid Login' )
   .get( config.endpoint + '/verify' )
   .removeHeader( 'Authorization' )
   .expectStatus( 401 )
 .toss();
 
-frisby.create( 'verify' )
+frisby.create( '/verify' )
   .get( config.endpoint + '/verify' )
   .expectStatus( 200 )
   .expectJSONTypes( 'user', object.user )
 .toss();
 
-frisby.create( 'login :: Invalid Login' )
+frisby.create( '/login :: Invalid Login' )
   .get( config.endpoint + '/login' )
   .removeHeader( 'Authorization' )
   .expectStatus( 401 )
 .toss();
 
-frisby.create( 'login' )
+frisby.create( '/login' )
   .get( config.endpoint + '/login' )
   .expectStatus( 200 )
   .expectJSONTypes( 'user', object.user )

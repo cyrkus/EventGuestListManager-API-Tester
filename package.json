@@ -21,6 +21,7 @@
   "homepage": "https://github.com/sevenapps/EventGuestListManager-API-Tester",
   "devDependencies": {
     "btoa": "^1.1.2",
+    "form-data": "^1.0.0-rc1",
     "frisby": "git://github.com/andersryanc/frisby#feature/add-path-to-json-types-error-msg",
     "jasmine": "^2.3.1",
     "jasmine-node": "^1.14.5",

@@ -13,13 +13,13 @@ frisby.globalSetup({
   },
 });
 
-frisby.create( 'attendees :: Invalid Login' )
+frisby.create( '/attendees :: Invalid Login' )
   .get( config.endpoint + '/attendees' )
   .removeHeader( 'Authorization' )
   .expectStatus( 401 )
 .toss();
 
-frisby.create( 'attendees :: Missing Event ID' )
+frisby.create( '/attendees :: Missing Event ID' )
   .get( config.endpoint + '/attendees' )
   .expectStatus( 400 )
   .expectJSON({
@@ -31,7 +31,7 @@ frisby.create( 'attendees :: Missing Event ID' )
   })
 .toss();
 
-frisby.create( 'attendees' )
+frisby.create( '/attendees' )
   .get( config.endpoint + '/attendees?event_id=2' )
   .expectStatus( 200 )
   .expectJSONTypes( 'attendees.?', object.attendee )
@@ -44,4 +44,25 @@ frisby.create( 'attendees' )
   .expectJSONTypes( 'event.modes.0.settings', object.modeSettings )
   .expectJSONTypes( 'client', object.client )
   .expectJSONTypes( 'client.settings', object.clientSettings )
+  .after( function( err, res, body ) {
+
+    var json       = JSON.parse( body );
+    var attendeeId = json.attendees[0].id;
+
+    frisby.create( '/attendees/:id' )
+      .get( config.endpoint + '/attendees/' + attendeeId )
+      .expectStatus( 200 )
+      .expectJSONTypes( 'attendee', object.attendee )
+      .expectJSONTypes( 'person', object.person )
+      .expectJSONTypes( 'event', object.event )
+      .expectJSONTypes( 'event.settings', object.eventSettings )
+      .expectJSONTypes( 'event.languages.?', object.language )
+      .expectJSONTypes( 'event.features.?', object.feature )
+      .expectJSONTypes( 'event.modes.?', object.mode )
+      .expectJSONTypes( 'event.modes.0.settings', object.modeSettings )
+      .expectJSONTypes( 'client', object.client )
+      .expectJSONTypes( 'client.settings', object.clientSettings )
+    .toss();
+
+  })
 .toss();
