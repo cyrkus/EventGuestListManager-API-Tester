@@ -12,6 +12,15 @@ First, of course, download this repo. Then, from the Terminal (assuming [Node.js
 $ npm install
 ```
 
+Then you will need to configure your environment by creating a `.env` file
+in the root directory with the following variables:
+
+```
+API_ENDPOINT='dev.events.7apps.io'
+API_USER={your username}
+API_PASS={your password}
+```
+
 To run the tests:
 
 ```
