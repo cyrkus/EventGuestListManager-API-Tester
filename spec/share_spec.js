@@ -56,16 +56,18 @@ frisby.create( 'pre /share :: get feat + lang ids' )
       .post( config.endpoint + '/share', form, {
         json: false,
         headers: {
-          'content-type': 'multipart/form-data; boundary=' + form.getBoundary(),
-          'content-length': form.getLengthSync(),
           'Authorization': 'Basic ' + config.auth,
           'User-Agent': config.ua,
           'x-version': config.version,
+          'content-type': 'multipart/form-data; boundary=' + form.getBoundary(),
+          'content-length': form.getLengthSync(),
         },
       })
       .expectStatus( 200 )
       .expectJSONTypes( 'person', object.person )
       .expectJSONTypes( 'share', object.share )
+      // TODO: DELETE the share .after
+      // need to add a DELETE method to API first
     .toss();
 
   })
