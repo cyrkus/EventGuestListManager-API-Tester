@@ -1,3 +1,4 @@
 .DS_Store
 .notes
+.env
 /node_modules/*
