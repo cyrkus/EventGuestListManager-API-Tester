@@ -1,7 +1,7 @@
 language: node_js
 node_js:
-  - "0.12.4"
-script: "npm test"
-# Travis seems to do this by default
-# before_script:
-#   - npm install
+- 0.12.4
+script: npm test
+notifications:
+  slack:
+    secure: KHY+5lOED6Cbn+paF3Asa4QKIGdAILopruQtVUZrF9/GIl3Tz71gX1uxURr6fEVnyAByR8lGd9egfXjA8vdf7p1B+UIfTyqHSbcG2ZgzIwmXpCWzwmgkIWTKaueeMMd+RGeE+iM4qtqkMzefrllaCl/vk4U1erUqROc7HDAGwXoNAHjZAu4+TB41XGJzW7vLi9YzIEuBBdpvExVQIZ62hA+KvjjFZaGW8J9XL5qHXRKwZDP6TFzmSJcEOKIAXTO5VUUEp6P3jWR+rDz/Ag/+lsOFX23WxG3uHzQqiOmzUHqQ2eUr7RFX4q/0MLwWBmvaz5NkI456BrotqdvCYTJ1L4CcedHI1+4CIJpocTx4K/Tp7zojw3WCBwRhVmgHaDjwbfwhjCHUNPFmG1Qcqnc8n8YTXvSBhrQGtENlsSD4z5nJ2efte97xZfJT42VJZHrJzLn7SuyzV37VUyGHN9saG3GQdpOmvYo2JcwYzmptnfs8CBLBdMWnFXJJzpQOB/Sjb8b/N0aWcF/nwJY9aYHyQvqCNgWtgoVe4Vb1fob6PT/zlAVhb29w204rRbp3Id9yL0CoeBF5EdUlLxOCWUWNm0H6zjyCnujCLmwNyTFE1uF9UIomOGjNPGkm8c0LT4eptrxfJ1r6Frj/XvI4JpxrFWURh6+MJVfax8JYPKXTGo8=
