@@ -148,6 +148,22 @@ exports.featureSettings = {
   // TODO: ... ??
 };
 
+exports.form = {
+  // TODO: ...
+};
+
+exports.formInput = {
+  // TODO: ...
+};
+
+exports.survey = {
+  // TODO: ...
+};
+
+exports.surveyQuestion = {
+  // TODO: ...
+};
+
 exports.mode = {
   id: Number,
   event_id: String, // Convert to number
