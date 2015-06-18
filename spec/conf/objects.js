@@ -38,7 +38,7 @@ exports.clientSettings = {
 exports.event = {
   id: Number,
   client_id: Number,
-  button_id: Number,
+  button_id: helper.numberOrNull,
   name: String,
   background: helper.stringOrNull, // Convert to imageObject
   background_size: Number, // Convert to imageObject
@@ -73,10 +73,10 @@ exports.eventSettings = {
 
 exports.attendee = {
   id: Number,
-  event_id: String, // Convert to number
-  person_id: helper.stringOrNull, // Convert to number
-  photo_id: helper.stringOrNull, // Convert to number
-  guests: String, // Convert to number
+  event_id: Number,
+  person_id: helper.numberOrNull,
+  photo_id: helper.stringOrNull,
+  guests: Number,
   formdata: Object,
   invited: helper.matchDateOrNull,
   waiting: helper.matchDateOrNull,
@@ -87,14 +87,14 @@ exports.attendee = {
   attended: helper.matchDateOrNull,
   created_at: helper.matchDate,
   updated_at: helper.matchDate,
-  created_by: helper.stringOrNull, // Convert to numberOrNull
+  created_by: helper.numberOrNull,
 };
 
 exports.language = {
   id: Number,
-  event_id: String, // Convert to number
+  event_id: Number,
   code: helper.inCountyCodes,
-  default: String, // Convert to boolean
+  default: Boolean,
   select_text: String,
   strings: {
     select: String,
@@ -131,10 +131,10 @@ exports.language = {
 
 exports.feature = {
   id: Number,
-  event_id: String, // Convert to number
-  button_id: String, // Convert to number
+  event_id: Number,
+  button_id: helper.numberOrNull,
   type: helper.inFeatureTypes,
-  order: String, // Convert to number
+  order: Number,
   title: Object,
   settings: Object,
   created_at: helper.matchDate,
@@ -166,8 +166,8 @@ exports.surveyQuestion = {
 
 exports.mode = {
   id: Number,
-  event_id: String, // Convert to number
-  button_id: helper.stringOrNull, // Convert to number
+  event_id: Number,
+  button_id: helper.numberOrNull,
   title: String,
   password: String,
   background: helper.localizedImageObject,
@@ -190,7 +190,7 @@ exports.modeSettings = {
 
 exports.person = {
   id: Number,
-  language_id: helper.stringOrNull, // Convert to numberOrNull
+  language_id: helper.numberOrNull,
   first_name: String,
   last_name: String,
   email: String, // Check email ?
@@ -245,25 +245,25 @@ exports.buttonBg = {
 
 exports.share = {
   id: Number,
-  event_id: String, // Convert to number
-  person_id: String, // Convert to number
+  event_id: Number,
+  person_id: Number,
   type: helper.inShareTypes,
   checkbox: helper.stringOrNull, // Convert to boolOrNull
   photo: String,
   video: helper.stringOrNull,
   created_at: helper.matchDate,
   updated_at: helper.matchDate,
-  created_by: helper.stringOrNull, // Convert to numberOrNull
+  created_by: helper.numberOrNull,
   user: helper.objOrNull,
 };
 
 exports.signup = {
   id: Number,
-  event_id: String, // Convert to number
-  person_id: String, // Convert to number
+  event_id: Number,
+  person_id: Number,
   formdata: Object,
   created_at: helper.matchDate,
   updated_at: helper.matchDate,
-  created_by: helper.stringOrNull, // Convert to numberOrNull
+  created_by: helper.numberOrNull,
   user: helper.objOrNull,
 };
