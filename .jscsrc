@@ -7,5 +7,7 @@
     "except": [ "{", "}" ]
   },
   "maximumLineLength": 120,
-  "requireCamelCaseOrUpperCaseIdentifiers": "ignoreProperties"
+  "requireCapitalizedComments": null,
+  "requireCamelCaseOrUpperCaseIdentifiers": "ignoreProperties",
+  "requireCurlyBraces": [ "if", "else", "for", "while", "do", "try", "catch" ]
 }
