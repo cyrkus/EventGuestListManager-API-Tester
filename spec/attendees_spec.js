@@ -32,7 +32,7 @@ frisby.create( '/attendees :: Missing Event ID' )
 .toss();
 
 frisby.create( '/attendees' )
-  .get( config.endpoint + '/attendees?event_id=2' )
+  .get( config.endpoint + '/attendees?event_id=' + config.eventId )
   .expectStatus( 200 )
   .expectJSONTypes( 'attendees.?', object.attendee )
   .expectJSONTypes( 'people.?', object.person )

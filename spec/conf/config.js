@@ -11,6 +11,8 @@ var config = {
   ua: userAgent,
   user: process.env.API_USER || '',
   pass: process.env.API_PASS || '',
+  clientId: process.env.API_CLIENT_ID || 1,
+  eventId: process.env.API_EVENT_ID || 2,
 };
 config.auth = btoa( config.user + ':' + config.pass );
 
