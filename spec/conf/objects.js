@@ -13,17 +13,17 @@ exports.user = {
 exports.client = {
   id: Number,
   name: String,
-  background: String, // Convert to imageObject
+  background: helper.stringOrNull, // Convert to imageObject
   background_size: Number, // Convert to imageObject
-  background_2x: String, // Convert to imageObject
+  background_2x: helper.stringOrNull, // Convert to imageObject
   background_2x_size: Number, // Convert to imageObject
-  logo: String, // Convert to imageObject
+  logo: helper.stringOrNull, // Convert to imageObject
   logo_size: Number, // Convert to imageObject
-  logo_2x: String, // Convert to imageObject
+  logo_2x: helper.stringOrNull, // Convert to imageObject
   logo_2x_size: Number, // Convert to imageObject
-  toolbar: String, // Convert to imageObject
+  toolbar: helper.stringOrNull, // Convert to imageObject
   toolbar_size: Number, // Convert to imageObject
-  toolbar_2x: String, // Convert to imageObject
+  toolbar_2x: helper.stringOrNull, // Convert to imageObject
   toolbar_2x_size: Number, // Convert to imageObject
   settings: Object,
   created_at: helper.matchDate,
